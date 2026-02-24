@@ -1,0 +1,15 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char S[]="Hello Priya Mishra";
+    char X[]="Priya";
+    char *pos = strstr(S,X);
+    if (pos != NULL) {
+        int index = pos-S;
+        printf("String first time mila index %d par mila\n",index);
+    }
+    else {
+        printf("String in mila");
+    }
+    return 0;
+}
