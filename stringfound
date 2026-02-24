@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<string.h>
+int main() {
+    char S[100],X[100];
+    int i,j;
+    printf("Enter the string S:");
+    scanf("%s", S);
+    printf("Enter the String X;");
+    scanf("%s", X);
+    int found = -1;
+    int lenS= strlen(S);
+    int lenX = strlen(X);
+
+    for (i=0;i<= lenS-lenX;i++) {
+        for (j=0;j<lenX;j++) {
+            if (S[i+j]!=X[j]) {
+               break;
+            }
+        }
+      if (j==lenX) {
+          found = i;
+          break;
+      }
+    }
+    if (found != -1) {
+        printf("String first time index %d par mila:",found);
+    }
+    else {
+        printf("Not found");
+    }
+return 0;
+}
