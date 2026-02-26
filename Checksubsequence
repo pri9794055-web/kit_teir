@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int isSubsequence(char str[], char sub[]) {
+    int i = 0, j = 0;
+
+    while (str[i] != '\0' && sub[j] != '\0') {
+        if (str[i] == sub[j])
+            j++;
+        i++;
+    }
+
+    if (sub[j] == '\0')
+        return 1;
+    else
+        return 0;
+}
+
+int main() {
+    char str[100],sub[100];
+    printf("Enter the String:");
+    scanf("%s", str);
+
+    printf("Enter the Substring:");
+    scanf("%s", sub);
+
+    if (isSubsequence(str, sub))
+        printf("TRUE,Subsequence found\n");
+    else
+        printf("FALSE,Subsequence not found\n");
+
+    return 0;
+}
+
