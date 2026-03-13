@@ -1,0 +1,74 @@
+#include <stdio.h>
+
+int main()
+{
+    int low, high, i, n, digit;
+
+    printf("Enter low and high: ");
+    scanf("%d %d", &low, &high);
+
+    for(i = low; i <= high; i++)
+    {
+        int arr[10] = {0};
+        n = i;
+        int distinct = 1;
+
+        while(n > 0)
+        {
+            digit = n % 10;
+
+            if(arr[digit] == 1)
+            {
+                distinct = 0;
+                break;
+            }
+
+            arr[digit] = 1;
+            n = n / 10;
+        }
+
+        if(distinct == 1)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
+#include <stdio.h>
+
+int main()
+{
+    int low, high, i, n, digit;
+
+    printf("Enter low and high: ");
+    scanf("%d %d", &low, &high);
+
+    for(i = low; i <= high; i++)
+    {
+        int arr[10] = {0};
+        n = i;
+        int distinct = 1;
+
+        while(n > 0)
+        {
+            digit = n % 10;
+
+            if(arr[digit] == 1)
+            {
+                distinct = 0;
+                break;
+            }
+
+            arr[digit] = 1;
+            n = n / 10;
+        }
+
+        if(distinct == 1)
+        {
+            printf("%d ", i);
+        }
+    }
+
+    return 0;
+}
