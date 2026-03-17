@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int arr[3][2];
+    int max = 0, customer=0;
+    printf("enter the elemn ts of row:");
+    for(int i = 0; i < 3; i++) {
+        for(int j = 0; j < 2; j++) {
+            scanf("%d", &arr[i][j]);
+        }
+
+    }
+
+    for(int i = 0; i < 3; i++) {
+        int sum = 0;
+        for(int j = 0; j < 2; j++) {
+            sum += arr[i][j];  // row sum
+        }
+        if(sum > max) {
+            max = sum;
+            customer = i;
+        }
+    else if(sum == max) {
+        max = sum;
+        customer = i;
+    }
+    }
+
+    printf(" total number of Wealthiest customer is: %d\n", customer + 1 );
+    printf("Total wealth: %d\n", max);
+    return 0;
+}
