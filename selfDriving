@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int low, high;
+
+    printf("Enter range (low high): ");
+    scanf("%d %d", &low, &high);
+
+    for (int num = low; num <= high; num++) {
+
+        int isSelfDriving = 1;
+
+        for (int temp = num; temp > 0; temp = temp / 10) {
+            int digit = temp % 10;
+
+            if (digit == 0 || num % digit != 0) {
+                isSelfDriving = 0;
+                break;
+            }
+        }
+
+        if (isSelfDriving)
+            printf("%d ", num);
+    }
+
+    return 0;
+}
