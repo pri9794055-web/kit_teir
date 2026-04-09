@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main() {
+    char str1[100], str2[100];
+    int freq[26] = {0};
+    int i, requiredChanges = 0, allowedChanges;
+
+    printf("Enter first string: ");
+    scanf("%s", str1);
+
+    printf("Enter second string: ");
+    scanf("%s", str2);
+
+
+    for(i = 0; str1[i] != '\0'; i++) {
+        freq[str1[i] - 'a']++;
+    }
+
+    for(i = 0; str2[i] != '\0'; i++) {
+        freq[str2[i] - 'a']--;
+    }
+
+
+    for(i = 0; i < 26; i++) {
+        if(freq[i] < 0)
+            requiredChanges += -freq[i];
+        else
+            requiredChanges += freq[i];
+    }
+
+    requiredChanges = requiredChanges / 2;
+
+
+    printf("Enter allowed changes: ");
+    scanf("%d", &allowedChanges);
+
+
+    if(allowedChanges >= requiredChanges) {
+        printf("Yes, anagram possible in %d changes\n", requiredChanges);
+    } else {
+        printf("No, need at least %d changes\n", requiredChanges);
+    }
+
+    return 0;
+}
